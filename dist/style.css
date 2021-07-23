@@ -1,0 +1,117 @@
+html, body {
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	background: 'cyan';
+}
+
+input {
+	position: absolute;
+	z-index: -1;
+}
+
+form {
+	width: 30vw;
+	height: 45vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	white-space: nowrap;
+	overflow: hidden;
+	background: red;
+}
+
+label {
+	color: #fff;
+	transition: transform 400ms ease-out;
+	display: inline-block;
+	min-height: 100%;
+	width: 30vw;
+	height: 45vh;
+	position: relative;
+	z-index: 1;
+	text-align: center;
+	line-height: 100vh;
+	background-size: cover;
+	background-position: center center;
+	font-size: 3rem;
+}
+
+label:before, label:after {
+	color: white;
+	display: block;
+	position: absolute;
+	padding: 1rem;
+	font-size: 3rem;
+	height: 10rem;
+	vertical-align: middle;
+	line-height: 10rem;
+	top: 50%;
+	transform: translate3d(0, -50%, 0);
+	cursor: pointer;
+}
+
+label:before {
+	content: "\276D";
+	right: 100%;
+}
+
+label:after {
+	content: "\276C";
+	left: 100%;
+}
+
+.container {
+	width: 30vw;
+	height: 45vh;
+	background: lime;
+}
+
+
+
+input:nth-of-type(0):checked ~ label:nth-of-type(0) { 
+	z-index: 0;
+}
+input:nth-of-type(0):checked ~ label {
+	transform: translate3d(0, 0, 0);
+}
+
+input:nth-of-type(1):checked ~ label:nth-of-type(1) { 
+	z-index: 0;
+}
+input:nth-of-type(1):checked ~ label {
+	transform: translate3d(-100%, 0, 0);
+}
+
+input:nth-of-type(2):checked ~ label:nth-of-type(2) {
+	z-index: 0;
+}
+input:nth-of-type(2):checked ~ label {
+	transform: translate3d(-200%, 0, 0);
+}
+
+input:nth-of-type(3):checked ~ label:nth-of-type(3) {
+	z-index: 0;
+}
+input:nth-of-type(3):checked ~ label {
+	transform: translate3d(-300%, 0, 0);
+}
+
+label[for="image0"] {
+	background-image: url('assets/boat.jpg');
+}
+
+label[for="image1"] {
+	background-image: url('assets/fuji.jpg');
+}
+
+label[for="image2"] {
+	background-image: url('assets/rocks.jpg');
+}
+
+label[for="image3"] {
+	background-image: url('assets/valley.jpg');
+}
