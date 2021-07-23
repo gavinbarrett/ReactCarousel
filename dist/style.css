@@ -1,27 +1,30 @@
+* {
+	box-sizing: border-box;
+}
+
 html, body {
 	width: 100vw;
 	height: 100vh;
 	margin: 0;
 	padding: 0;
-	background: 'cyan';
+	overflow: hidden;
 }
 
 input {
 	position: absolute;
 	z-index: -1;
+	display: none;
 }
 
 form {
 	width: 30vw;
 	height: 45vh;
-	position: absolute;
 	top: 0;
 	left: 0;
 	bottom: 0;
 	right: 0;
 	white-space: nowrap;
 	overflow: hidden;
-	background: red;
 }
 
 label {
@@ -38,6 +41,38 @@ label {
 	background-size: cover;
 	background-position: center center;
 	font-size: 3rem;
+}
+
+.container-box {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	width: 30vw;
+	height: 45vh;
+}
+
+input:nth-of-type(1):checked ~ label:nth-of-type(1),
+input:nth-of-type(2):checked ~ label:nth-of-type(2),
+input:nth-of-type(3):checked ~ label:nth-of-type(3),
+input:nth-of-type(4):checked ~ label:nth-of-type(4) { 
+	z-index: 0;
+}
+input:nth-of-type(1):checked ~ label {
+	transform: translate3d(0, 0, 0);
+}
+input:nth-of-type(2):checked ~ label {
+	transform: translate3d(-100%, 0, 0);
+}
+input:nth-of-type(3):checked ~ label {
+	transform: translate3d(-200%, 0, 0);
+}
+input:nth-of-type(4):checked ~ label {
+	transform: translate3d(-300%, 0, 0);
 }
 
 label:before, label:after {
@@ -62,56 +97,4 @@ label:before {
 label:after {
 	content: "\276C";
 	left: 100%;
-}
-
-.container {
-	width: 30vw;
-	height: 45vh;
-	background: lime;
-}
-
-
-
-input:nth-of-type(0):checked ~ label:nth-of-type(0) { 
-	z-index: 0;
-}
-input:nth-of-type(0):checked ~ label {
-	transform: translate3d(0, 0, 0);
-}
-
-input:nth-of-type(1):checked ~ label:nth-of-type(1) { 
-	z-index: 0;
-}
-input:nth-of-type(1):checked ~ label {
-	transform: translate3d(-100%, 0, 0);
-}
-
-input:nth-of-type(2):checked ~ label:nth-of-type(2) {
-	z-index: 0;
-}
-input:nth-of-type(2):checked ~ label {
-	transform: translate3d(-200%, 0, 0);
-}
-
-input:nth-of-type(3):checked ~ label:nth-of-type(3) {
-	z-index: 0;
-}
-input:nth-of-type(3):checked ~ label {
-	transform: translate3d(-300%, 0, 0);
-}
-
-label[for="image0"] {
-	background-image: url('assets/boat.jpg');
-}
-
-label[for="image1"] {
-	background-image: url('assets/fuji.jpg');
-}
-
-label[for="image2"] {
-	background-image: url('assets/rocks.jpg');
-}
-
-label[for="image3"] {
-	background-image: url('assets/valley.jpg');
 }
